@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🛋️ Couch Remote</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>🎮 Media Control</h1>
+
+    <section>
+        <h2>🛋️ Remote for Windows Media Player</h2>
+        <button onclick="sendRequest('/control/wmp/volumeup')">🔊 Volume Up</button><br>
+        <button onclick="sendRequest('/control/wmp/volumedown')">🔉 Volume Down</button><br>
+        <button onclick="sendRequest('/control/wmp/pause')">⏯️ Play/Pause</button><br>
+    </section>
+
+    <section>
+        <h2>🎬 MPC</h2>
+        <button onclick="sendRequest('/control/mpc/pause')">⏯️ Play/Pause</button><br>
+        <button onclick="sendRequest('/control/mpc/volumeup')">🔊 Volume Up</button><br>
+        <button onclick="sendRequest('/control/mpc/volumedown')">🔉 Volume Down</button>
+    </section>
+
+    <section>
+        <h2>🎬 BS Player</h2>
+        <button onclick="sendRequest('/control/bsp/volumeup')">🔊 Volume Up</button><br>
+        <button onclick="sendRequest('/control/bsp/volumedown')">🔉 Volume Down</button><br>
+        <button onclick="sendRequest('/control/bsp/pause')">⏯️ Play/Pause</button><br>
+    </section>
+
+    <section>
+        <h2>🦁 Brave Browser</h2>
+        <button onclick="sendRequest('/control/brave/volumeup')">🔊 Volume Up</button><br>
+        <button onclick="sendRequest('/control/brave/volumedown')">🔉 Volume Down</button><br>
+        <button onclick="sendRequest('/control/brave/pause')">⏯️ Play/Pause</button><br>
+    </section>
+
+    <script>
+        function sendRequest(endpoint) {
+            fetch(endpoint)
+                .then(response => response.text())
+                .then(text => console.log(text))
+                .catch(err => console.error('Error:', err));
+        }
+    </script>
+</body>
+</html>
