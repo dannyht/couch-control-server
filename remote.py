@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 APP_TITLES = {
     "wmp": "Media Player",
-    "mpc": "Media Player Classic",
+    "mpc": "MPC-BE",
     "bsplayer": "BS.Player",
     "brave": "Brave"
 }
